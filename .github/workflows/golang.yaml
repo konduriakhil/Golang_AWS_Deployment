@@ -13,11 +13,10 @@ jobs:
         with: 
           go-version: 1.22.4
       - name: Build the Go language
-        uses: actions/github-script@v7
-        with: 
-          script: |
-            go mod tidy
-            go build -o myapp
+        run: |
+          go version
+          go mod tidy
+          go build -o myapp
       - name: Publishing the artifacts
         uses: actions/upload-artifact@v4            
         with:
